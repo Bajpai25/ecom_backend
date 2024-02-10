@@ -1,6 +1,5 @@
 const express=require('express');
 const mongoose =require('mongoose');
-const bcrypt=require('bcrypt')
 const User=require('./models/User')
 const multer=require('multer');
 const Product=require('./models/product');
@@ -130,7 +129,7 @@ app.post('/login', async (req, res) => {
             });
         }
 
-        // Compare plaintext passwords directly (not secure)
+        // Compare  passwords 
         if (password !== user.password) {
             return res.status(400).json({
                 message: 'Invalid credentials.'
